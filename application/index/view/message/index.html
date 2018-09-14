@@ -1,0 +1,89 @@
+<div id="container">
+  <div class="sidebar">
+    <div class="sideMenu">
+      <h3><a href="{:url('index/Index/index')}"  title="返回首页">返回首页</a></h3>
+      <ul>
+        <li>
+          <a href="{:url('index/product/index')}"  class="">产品中心</a>
+        </li>
+        <li>
+          <a href="{:url('index/News/index')}" class="">新闻动态</a>
+        </li>
+        <li>
+          <a href="{:url('index/Cases/index')}" class="">案例展示</a>
+        </li>
+        <li><a href="{:url('index/Contact/index')}" class="">联系我们</a></li>
+        <li><a href="{:url('index/About/index')}" class="">关于我们</a></li>
+        <li><a href="{:url('index/Message/index')}" class="">在线留言</a></li>
+      </ul>
+    </div>
+    <div class="widget">
+      <h3>联系信息</h3>
+      <div class="textwidget">
+        {volist name="$ContactInfo" id="ContactInfoList"}
+        <p><img src="__STATIC__/about/images/online.jpg" alt="联系信息"/></p>
+        <p><b>全国服务热线：{$ContactInfoList.telephone|default='telephone【默认值】'}</b></p>
+        <p><b>移动电话：</b>{$ContactInfoList.cellphone|default='cellphone【默认值】'}</p>
+        <p><b>联系Q Q： </b>{$ContactInfoList.qq|default='qq【默认值】'}</p>
+        <p><b>电子邮箱： </b><a href="mailto:{$ContactInfoList.email|default='email 默认'}">{$ContactInfoList.email|default='email 默认'}</a></p>
+        <p><b>公司地址： </b>{$ContactInfoList.address|default='address【默认值】'}</p>
+        {/volist}
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="post lightbox">
+      <h2>在线留言</h2>
+      <div class="entry">
+<p>如果您有问题，可以在这里留言！<br/></p>
+      </div>
+
+        
+<table width=100% align=center cellpadding=3 cellspacing=1 bgcolor='#DBEAF5' style="table-layout:fixed">
+  <form action="{:url('index/Message/addMessage')}" method="post">
+    <input name='enews' type='hidden' value='AddFeedback'>
+    <tr style="height: 40px;">
+      <td width='16%' height=25 bgcolor='ffffff' align="center" valign="center">姓名</td>
+      <td bgcolor='ffffff'><input name='name' type='text' value=''>
+        * 必填</td>
+    </tr>
+    <tr style="height: 40px;">
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">性别</td>
+      <td bgcolor='ffffff'>
+        <input name="sex" type="radio" value="先生" checked>
+        先生
+        <input name="sex" type="radio" value="女生">
+        女生</td>
+    </tr>
+    <tr style="height: 40px;">
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">电话</td>
+      <td bgcolor='ffffff'><input name='tel' type='text' value=''>
+        * 必填</td>
+    </tr>
+    <tr style="height: 40px;">
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">邮箱</td>
+      <td bgcolor='ffffff'><input name='email' type='text' value=''></td>
+    </tr>
+    <tr style="height: 40px;">
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">地址</td>
+      <td bgcolor='ffffff'><input name='address' type='text' value='' style="width: 50%;"></td>
+    </tr>
+    <tr style="height: 40px;">
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">QQ</td>
+      <td bgcolor='ffffff'><input name='qq' type='text' value=''></td>
+    </tr>
+    <tr>
+      <td width='20%' height=25 bgcolor='ffffff' align="center" valign="center">内容</td>
+      <td bgcolor='ffffff'>
+          <textarea name='text' style="width:90%;height:100px;"></textarea>
+      </td>
+    </tr>
+    <tr style="height: 40px;">
+      <td bgcolor='ffffff'></td>
+      <td bgcolor='ffffff'><input type='submit' name='submit' value='  提 交 留 言  ' style="height: 32px;"></td>
+    </tr>
+  </form>
+</table>
+    </div>
+  </div>
+</div>

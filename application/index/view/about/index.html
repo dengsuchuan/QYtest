@@ -1,0 +1,45 @@
+
+<div id="container">
+  <div class="sidebar">
+    <div class="sideMenu">
+      <h3><a href="{:url('index/Index/index')"  title="返回首页" target="_blank">返回首页</a></h3>
+      <ul>
+        <li>
+          <a href="{:url('index/product/index')}"  class="">产品中心</a>
+        </li>
+        <li>
+          <a href="{:url('index/News/index')}" class="">新闻动态</a>
+        </li>
+        <li>
+          <a href="{:url('index/Cases/index')}" class="">案例展示</a>
+        </li>
+        <li><a href="{:url('index/Contact/index')}" class="">联系我们</a></li>
+        <li><a href="{:url('index/About/index')}" class="">关于我们</a></li>
+        <li><a href="{:url('index/Message/index')}" class="">在线留言</a></li>
+      </ul>
+    </div>
+    <div class="widget">
+      <h3>联系信息</h3>
+      <div class="textwidget">
+        {volist name="$ContactInfo" id="ContactInfoList"}
+        <p><img src="__STATIC__/about/images/online.jpg" alt="联系信息"/></p>
+        <p><b>全国服务热线：{$ContactInfoList.telephone|default='telephone【默认值】'}</b></p>
+        <p><b>移动电话：</b>{$ContactInfoList.cellphone|default='cellphone【默认值】'}</p>
+        <p><b>联系Q Q： </b>{$ContactInfoList.qq|default='qq【默认值】'}</p>
+        <p><b>电子邮箱： </b><a href="mailto:{$ContactInfoList.email|default='email 默认'}">{$ContactInfoList.email|default='email 默认'}</a></p>
+        <p><b>公司地址： </b>{$ContactInfoList.address|default='address【默认值】'}</p>
+        {/volist}
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="post lightbox">
+      <h2>关于我们</h2>
+      <div class="entry">
+        {volist name="$aboutInfo" id="aboutInfoList"}
+          <p>{$aboutInfoList.describedefault='【默认描述】'}</p>
+        {/volist}
+      </div>
+    </div>
+  </div>
+</div>

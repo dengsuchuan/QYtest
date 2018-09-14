@@ -1,0 +1,371 @@
+---------------------------------------------------------------
+[ 2018-06-11T09:22:25+08:00 ] 127.0.0.1 GET /
+[ info ] qy.me/ [运行时间：0.511514s][吞吐率：1.95req/s] [内存消耗：3,362.06kb] [文件加载：93]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebServer\www\project\Enterprise\application\index\view\index\index.html [ array (
+  0 => 'webInfo',
+  1 => 'contact',
+  2 => 'link',
+  3 => 'GoodsClassLists',
+  4 => 'NewsClassLists',
+  5 => 'CasesClassLists',
+  6 => 'NewsInfos',
+  7 => 'CooperateLists',
+  8 => 'ScopeLists',
+  9 => 'AboutLists',
+  10 => 'GoodsInfoLists',
+  11 => 'CaseInfoLists',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011682s ] mysql:host=127.0.0.1;dbname=qy;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_webinfo` [ RunTime:0.002403s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_webinfo` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_contact` [ RunTime:0.003339s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_contact` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_link` [ RunTime:0.001715s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_link` [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_goodsclass` [ RunTime:0.002062s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_goodsclass` [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsclass` [ RunTime:0.002641s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsclass` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_caseclass` [ RunTime:0.003314s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_caseclass` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsinfo` [ RunTime:0.001748s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsinfo` [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_cooperate` [ RunTime:0.001625s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_cooperate` [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_scope` [ RunTime:0.001702s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_scope` [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_about` [ RunTime:0.001894s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_about` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_goodsinfo` [ RunTime:0.001834s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_goodsinfo` [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_caseinfo` [ RunTime:0.002653s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qy_caseinfo` LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_caseinfo` ORDER BY `create_time` DESC LIMIT 0,8 [ RunTime:0.000504s ]
+---------------------------------------------------------------
+[ 2018-06-11T09:22:36+08:00 ] 127.0.0.1 GET /index/cc/getname
+[ info ] qy.me/index/cc/getname [运行时间：0.138749s][吞吐率：7.21req/s] [内存消耗：1,655.92kb] [文件加载：64]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680147',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:23:01+08:00 ] 127.0.0.1 GET /index/CC
+[ info ] qy.me/index/CC [运行时间：0.034909s][吞吐率：28.65req/s] [内存消耗：1,655.87kb] [文件加载：64]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680157',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:23:09+08:00 ] 127.0.0.1 GET /index/cc
+[ info ] qy.me/index/cc [运行时间：0.055882s][吞吐率：17.89req/s] [内存消耗：1,655.93kb] [文件加载：64]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680182',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /index/Cases
+[ info ] qy.me/index/Cases [运行时间：0.163584s][吞吐率：6.11req/s] [内存消耗：3,145.76kb] [文件加载：86]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680190',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebServer\www\project\Enterprise\application\index\view\cases\index.html [ array (
+  0 => 'webInfo',
+  1 => 'contact',
+  2 => 'link',
+  3 => 'GoodsClassLists',
+  4 => 'NewsClassLists',
+  5 => 'CasesClassLists',
+  6 => 'NewsInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001742s ] mysql:host=127.0.0.1;dbname=qy;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_webinfo` [ RunTime:0.002413s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_webinfo` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_contact` [ RunTime:0.001464s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_contact` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_link` [ RunTime:0.001518s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_link` [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_goodsclass` [ RunTime:0.001413s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_goodsclass` [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsclass` [ RunTime:0.001411s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsclass` [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_caseclass` [ RunTime:0.001379s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_caseclass` [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsinfo` [ RunTime:0.002137s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsinfo` [ RunTime:0.000414s ]
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/vis/2015-12-07/6514caaf145108344c59eab7f0c73f7f.jpg
+[ info ] qy.me/static/index/d/file/shocases/vis/2015-12-07/6514caaf145108344c59eab7f0c73f7f.jpg [运行时间：0.036756s][吞吐率：27.21req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/vis/2015-12-07/fb908aadd2b7d0023f6fcbc630d76e6f.jpg
+[ info ] qy.me/static/index/d/file/shocases/vis/2015-12-07/fb908aadd2b7d0023f6fcbc630d76e6f.jpg [运行时间：0.044244s][吞吐率：22.60req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/ais/2015-12-07/cf0fb9ecedaa82a496b69f34d36cc4ba.jpg
+[ info ] qy.me/static/index/d/file/shocases/ais/2015-12-07/cf0fb9ecedaa82a496b69f34d36cc4ba.jpg [运行时间：0.045961s][吞吐率：21.76req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/vis/2015-12-07/8d2038ea899feef75fe0563fa3cbc349.jpg
+[ info ] qy.me/static/index/d/file/shocases/vis/2015-12-07/8d2038ea899feef75fe0563fa3cbc349.jpg [运行时间：0.048722s][吞吐率：20.52req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/vis/2015-12-07/b9202a65b8c2272b7cd091d0bd1a32f6.jpg
+[ info ] qy.me/static/index/d/file/shocases/vis/2015-12-07/b9202a65b8c2272b7cd091d0bd1a32f6.jpg [运行时间：0.046318s][吞吐率：21.59req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:27+08:00 ] 127.0.0.1 GET /static/index/d/file/shocases/add/2015-12-07/efa4456a03cb2c21fb1a49923c8290ab.jpg
+[ info ] qy.me/static/index/d/file/shocases/add/2015-12-07/efa4456a03cb2c21fb1a49923c8290ab.jpg [运行时间：0.070962s][吞吐率：14.09req/s] [内存消耗：1,271.46kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+---------------------------------------------------------------
+[ 2018-06-11T09:23:30+08:00 ] 127.0.0.1 GET /index/Cc
+[ info ] qy.me/index/Cc [运行时间：0.038377s][吞吐率：26.06req/s] [内存消耗：1,655.90kb] [文件加载：64]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680208',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:23:41+08:00 ] 127.0.0.1 GET /index/Cc/getlist
+[ info ] qy.me/index/Cc/getlist [运行时间：0.033142s][吞吐率：30.17req/s] [内存消耗：1,655.95kb] [文件加载：64]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680211',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:24:07+08:00 ] 127.0.0.1 GET /index/cqq
+[ info ] qy.me/index/cqq [运行时间：0.040251s][吞吐率：24.84req/s] [内存消耗：1,701.07kb] [文件加载：66]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680222',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:24:59+08:00 ] 127.0.0.1 GET /index/cq
+[ info ] qy.me/index/cq [运行时间：0.031952s][吞吐率：31.30req/s] [内存消耗：1,701.03kb] [文件加载：66]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680248',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:25:09+08:00 ] 127.0.0.1 GET /index/cq/getname
+[ info ] qy.me/index/cq/getname [运行时间：0.058702s][吞吐率：17.04req/s] [内存消耗：1,656.46kb] [文件加载：62]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680300',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2018-06-11T09:25:49+08:00 ] 127.0.0.1 GET /index/cq/getlist
+[ info ] qy.me/index/cq/getlist [运行时间：0.092783s][吞吐率：10.78req/s] [内存消耗：1,700.69kb] [文件加载：66]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680310',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]模板文件不存在:D:\WebServer\www\project\Enterprise\application\index\view\cq\get_list.html[D:\WebServer\www\project\Enterprise\thinkphp\library\think\view\driver\Think.php:86]
+---------------------------------------------------------------
+[ 2018-06-11T09:26:12+08:00 ] 127.0.0.1 GET /index/cq/getlist
+[ info ] qy.me/index/cq/getlist [运行时间：0.175941s][吞吐率：5.68req/s] [内存消耗：1,930.99kb] [文件加载：72]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680350',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WebServer\www\project\Enterprise\application\index\view\cq\get_list.html [ array (
+  0 => 'arrays',
+) ]
+[ error ] [8]未定义变量: GoodsClassLists[D:\WebServer\www\project\Enterprise\runtime\temp\84c3eb2b3d29564139de2e3b0d108615.php:37]
+---------------------------------------------------------------
+[ 2018-06-11T09:26:25+08:00 ] 127.0.0.1 GET /index/cq/getlist
+[ info ] qy.me/index/cq/getlist [运行时间：0.042283s][吞吐率：23.65req/s] [内存消耗：1,773.18kb] [文件加载：70]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680373',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WebServer\www\project\Enterprise\application\index\view\cq\get_list.html [ array (
+  0 => 'arrays',
+) ]
+[ error ] [8]未定义变量: GoodsClassLists[D:\WebServer\www\project\Enterprise\runtime\temp\84c3eb2b3d29564139de2e3b0d108615.php:37]
+---------------------------------------------------------------
+[ 2018-06-11T09:26:29+08:00 ] 127.0.0.1 GET /index/cq/getlist
+[ info ] qy.me/index/cq/getlist [运行时间：0.048306s][吞吐率：20.70req/s] [内存消耗：1,773.18kb] [文件加载：70]
+[ info ] [ LANG ] D:\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1528680147; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1528680386',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WebServer\www\project\Enterprise\application\index\view\cq\get_list.html [ array (
+  0 => 'arrays',
+) ]
+[ error ] [8]未定义变量: GoodsClassLists[D:\WebServer\www\project\Enterprise\runtime\temp\84c3eb2b3d29564139de2e3b0d108615.php:37]

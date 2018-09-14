@@ -1,0 +1,45 @@
+<div id="footer">
+    <div class="footLine"></div>
+    <div class="footer">
+        <div class="footLeft">
+            <div class="pageslist">
+                <ul>
+                    <li><a href="{:url('index/Message/index')}" title="在线留言" target="_blank">在线留言</a></li>
+                    <li><a href="{:url('index/Contact/index')}" title="联系我们" target="_blank">联系我们</a></li>
+                    <li><a href="{:url('index/About/index')}" title="关于我们" target="_blank">关于我们</a></li>
+                    <li><a href="{:url('index/Service/index')}" title="我们的服务" target="_blank">我们的服务</a></li>
+                </ul>
+            </div>
+            <div class="socialSns">
+                <a class="weibo" rel="nofollow" target="_blank">新浪微博</a>
+                <a class="tencent" rel="nofollow" target="_blank">腾讯微博</a>
+                <a class="qzone" rel="nofollow" target="_blank">QQ空间</a>
+            </div>
+            <div class="friendlinks">
+                <ul>
+                    <li><strong>友情链接：</strong></li>
+                    {volist name="$link" id="list"}
+                    <li><a href="{$list.realm}" target="_blank">{$list.title}</a></li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="footRight">
+            {volist name="$ContactInfo" id="ContactInfoList"}
+            <div class="phone"> <i class="icon-phone"></i> <a href="tel:{$contact.telephone|default='400-1234-5678'}" rel="nofollow">{$ContactInfoList.telephone|default='400-1234-5678【默认值】'}</a> </div>
+            {/volist}
+            <div class="copyright">
+                <p>Copyright <a href="{$webInfo.realm|default='https://www.geekln.cn/'}" target="_blank">{$webInfo.title|default='默认标题'}</a> Rights Reserved. {$webInfo.record|default='川ICP备1234567-9号【默认值】'} . 统计代码</p>
+                <p> 企业站点系统 @ <a href="https://www.geekln.cn/" title="静影探风" target="_blank">静影探风</a>. </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="backTop"> <a href="#header" title="返回顶部"><i class="icon-arrow-up"></i></a> </div>
+<div id="simplemodal-container"></div>
+<script type="text/javascript" src="__STATIC__/about/js/responsiveslides-bxslider.min.js"></script>
+<script type="text/javascript" src="__STATIC__/about/js/leonhere.js"></script>
+<script type="text/javascript" src="__STATIC__/about/js/transform.js"></script>
+</body>
+</html>

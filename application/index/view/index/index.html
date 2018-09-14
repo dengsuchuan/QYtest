@@ -1,0 +1,124 @@
+<div id="service">
+    <div class="allTitle"><span>我们的业务范围 »</span></div>
+    {volist name="$ScopeLists" id="ScopeList"}
+    <div class="serviceBox">
+        <div class="serviceBoxInfo">
+            <h3><i class="{$ScopeList.icon|default='icon-align-right'} icon-2x"></i><span><a href="#" target="_blank" title="{$ScopeList.title|default='默认业务选项'}">{$ScopeList.title|default='默认业务选项'}</a></span></h3>
+            <div class="line"></div>
+            <div class="serviceBoxTxt">{$ScopeList.describe|default='默认业务描述默认业务描述默认业务描述默认业务描述'}</div>
+        </div>
+    </div>
+    {/volist}
+    <div class="clear"></div>
+</div><div id="aboutUs">
+    {volist name="$AboutLists" id="AboutList"}
+    <div class="aboutUs">
+        <div class="allTitle"><span>« 关于我们</span></div>
+        <div class="aboutUsThumb"> <a href="#" target="_blank" title="关于我们"> <img alt="关于我们" src="__STATIC__/about/images/{$AboutList.images}"/> </a> </div>
+        <div class="aboutUsTxt">
+            <p>{$AboutList.describe|msubstr}</p>
+            <p class="more"><a href="{:url('index/About/index')}" target="_blank" title="关于我们">阅读更多 »</a></p>
+        </div>
+    </div>
+    {/volist}
+</div><div id="products">
+    <div class="productsMenu">
+        <ul>
+            {volist name="$GoodsClassLists" id="GoodsClassList"}
+            <li class="{eq name='$GoodsClassList.GoodsClassId' value='1'}on{/eq}">{$GoodsClassList.ClassName}</li>
+            {/volist}
+        </ul>
+    </div>
+    <div class="productsAll">
+        {volist name="$GoodsClassLists" id="GoodsClassList"}
+        <div class="productsList {neq name='$GoodsClassList.GoodsClassId' value='1'}hide{/neq}">
+            <ul>
+                {assign name="count" value="1"}
+                {volist name="$GoodsInfoLists" id="GoodsInfoList" }
+                {eq name='$GoodsInfoList.goodsclassid' value='$GoodsClassList.GoodsClassId'}
+                {if condition="$count < 5"}
+                <li>
+                    <div class="productsThumb"> <a href="#" target="_blank" title="{$GoodsInfoList.goodsname}"> <img alt="{$GoodsInfoList.goodsname}" src="__STATIC__/images/goods/{$GoodsInfoList.images}"/> </a>
+                        <div class="onBackground"> <a href="#" target="_blank" title="{$GoodsInfoList.goodsname}"><span>+</span></a> </div>
+                    </div>
+                    <h2><a href="#" target="_blank" title="{$GoodsInfoList.goodsname}">{$GoodsInfoList.goodsname}</a></h2>
+                </li>
+                {assign name="count" value="$count+1"}
+                {/if}
+                {/eq}
+                {/volist}
+            </ul>
+        </div>
+        {/volist}
+    </div>
+</div>
+<div id="news">
+    <div class="newslist">
+        <div class="newsMenu">
+            <ul>
+                {volist name="$NewsClassLists" id="NewsClassList"}
+                <li class="{eq name='$NewsClassList.NewsClassId' value='1'}on{/eq}">{$NewsClassList.ClassName}</li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="newsBox">
+            {volist name="$NewsClassLists" id="NewsClassList"}
+            <div class="{neq name='$NewsClassList.NewsClassId' value='1'}hide{/neq}">
+                <ul>
+                {assign name="count" value="1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第一部分}
+                {volist name="$NewsInfos" id="NewsInfo" }
+                    {eq name='$NewsInfo.newsclassid' value='$NewsClassList.NewsClassId'}
+                        {if condition="$count < 7"}
+                            <li><span>{$NewsInfo.create_time}</span><i>»</i> <a href="#" target="_blank" title="{$NewsInfo.newsname}">{$NewsInfo.newsname}</a></li>
+                        {assign name="count" value="$count+1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第二部分}
+                        {/if}
+                    {/eq}
+                {/volist}
+
+                </ul>
+            </div>
+            {/volist}
+        </div>
+
+    </div>
+    <div class="partner">
+        <div class="allTitle"><span>« 合作伙伴</span></div>
+        <ul>
+            {volist name="$CooperateLists" id="CooperateList"}
+            <li><a title="{$CooperateList.CooperateTitle}" href="{$CooperateList.CooperateUrl}" rel="nofollow" target="_blank"><img src="__STATIC__/images/default/{$CooperateList.CooperateImg}" alt="{$CooperateList.CooperateTitle}"/></a></li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+<div id="showcase">
+    <div class="showcase">
+        <div class="allTitle"><span>案例展示 »</span></div>
+        <ul class="bxslider" id="homebx">
+            {volist name="$CaseInfoLists" id="CaseInfoList"}
+            <li> <a href="#" target="_blank" title="{$CaseInfoList.casename}"> <img alt="{$CaseInfoList.casename}" src="__STATIC__/images/case/{$CaseInfoList.images}"/> </a> </li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+<div id="contactUs">
+    <div class="allTitle"><span>« 联系我们 »</span></div>
+    {volist name="$ContactInfo" id="ContactInfoList"}
+    <div class="contactInfo">
+        <div class="contactTxt contactCon">
+            <p>{$ContactInfoList.text|default='在【qy_contact表里的text字段】'}</p>
+        </div>
+        <h3>联系信息</h3>
+        <div class="contactTxt">
+            <ul>
+                <li><i class="icon-map-marker icon-large"></i>{$ContactInfoList.address|default='在【qy_contact表里的address字段】'}</li>
+                <li><i class="icon-phone-sign"></i>{$ContactInfoList.telephone|default='在【qy_contact表里的telephone字段】'}</li>
+                <li><i class="icon-envelope"></i><a href="mailto:{$ContactInfoList.email|default='在【qy_contact表里的email字段】'}">{$ContactInfoList.email|default='在【qy_contact表里的email字段】'}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="contactForm"> <img src="__STATIC__/about/images/map.png" title="地图-东经:{$ContactInfoList.address_n|default='在【qy_contact表里的address_n字段】'}度，北纬:{$ContactInfoList.address_e|default='在【qy_contact表里的address_e字段】'}度"/> </div>
+    {/volist}
+</div>
+
+

@@ -1,0 +1,75 @@
+
+<div id="container">
+  <div class="sidebar">
+    <div class="sideMenu">
+      <h3><a href="{:url('index/product/index')}#container" title="产品中心">产品中心</a></h3>
+      <ul>
+          {volist name="$GoodsClassLists" id="GoodsClassList"}
+          <li class="menu-item"><a href="{:url('index/Product/productClassifyShow',['GoodsClassId'=>$GoodsClassList.GoodsClassId])}#container">{$GoodsClassList.ClassName}</a></li>
+          {/volist}
+      </ul>
+    </div>
+    <div class="widget">
+      <h3>联系信息</h3>
+      <div class="textwidget">
+        {volist name="$ContactInfo" id="ContactInfoList"}
+        <p><img src="__STATIC__/about/images/online.jpg" alt="联系信息"/></p>
+        <p><b>全国服务热线：{$ContactInfoList.telephone|default='telephone【默认值】'}</b></p>
+        <p><b>移动电话：</b>{$ContactInfoList.cellphone|default='cellphone【默认值】'}</p>
+        <p><b>联系Q Q： </b>{$ContactInfoList.qq|default='qq【默认值】'}</p>
+        <p><b>电子邮箱： </b><a href="mailto:{$ContactInfoList.email|default='email 默认'}">{$ContactInfoList.email|default='email 默认'}</a></p>
+        <p><b>公司地址： </b>{$ContactInfoList.address|default='address【默认值】'}</p>
+        {/volist}
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="itemList">
+      <h3>{$goodsClassName}</h3>
+      <ul>
+        {volist name="$GoodsInfo" id="GoodsInfoList"}
+        <li>
+          <div class="thumbnail">
+            <a href="#{$GoodsInfoList.id|default='默认'}" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank">
+                <img alt="{$GoodsInfoList.goodsname|default='默认'}" src="__STATIC__/images/goods/{$GoodsInfoList.images|default='默认'}"/>
+            </a>
+            <div class="onBackground"> <a href="#{$GoodsInfoList.id|default='默认'}" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank"></a> </div>
+          </div>
+          <h2> <a href="#{$GoodsInfoList.newsId|default='默认'}l" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank">{$GoodsInfoList.goodsname|default='默认】'}</a> </h2>
+        </li>
+        {/volist}
+      </ul>
+        <div id="page">{$GoodsInfo|raw}</div>
+        <style>
+            #page  ul li{
+                float: left;
+                width:20px;
+                margin:10px;
+            }
+
+            #page li{
+                padding:2px 10px;
+                box-shadow: 5px 5px 5px #888888;
+                border-radius:25px;
+                border:#f0ad4e 1px solid;
+            }
+
+            #page a{
+                padding:1px 10px 10px 6px;
+                color:#f0ad4e;
+            }
+
+            #page a:hover{
+                color: whitesmoke;
+            }
+
+            #page li:hover{
+                background:orange;
+            }
+            #page .clear{
+                display: none;
+            }
+        </style>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<body>
+<div id="header">
+    <div class="header">
+        <div class="logo"> <a href="index.htm" title="{$webInfo.title|default='默认主题'}"><img src="__STATIC__/skin/ecms079/images/logo.png" alt="{$webInfo.title|default='默认主题'}"/></a> </div>
+        <div class="language"> <span class="on">简</span> <span><a href="" id="StranLink">繁</a></span> </div>
+        <div class="menu" id="menu">
+            <ul>
+                <li><a href="{:url('index/Index/index')}" class="">首页</a></li>
+                <li>
+                    <a href="{:url('index/product/index')}"  class="">产品中心</a>
+                    <ul class="sub-menu">
+                        {volist name="$GoodsClassLists" id="GoodsClassList"}
+                        <li class="menu-item"><a href="{:url('index/Product/productClassifyShow',['GoodsClassId'=>$GoodsClassList.GoodsClassId])}">{$GoodsClassList.ClassName}</a></li>
+                        {/volist}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{:url('index/News/index')}" class="">新闻动态</a>
+                    <ul class="sub-menu">
+                        {volist name="$NewsClassLists" id="NewsClassList"}
+                        <li class="menu-item"><a href="{:url('index/News/newsClassifyShow',['newsClassId'=>$NewsClassList.NewsClassId])}">{$NewsClassList.ClassName}</a></li>
+                        {/volist}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{:url('index/Cases/index')}" class="">案例展示</a>
+                    <ul class="sub-menu">
+                        {volist name="$CasesClassLists" id="CasesClassList"}
+                        <li class="menu-item"><a href="{:url('index/Cases/caseClassifyShow',['CaseClassId'=>$CasesClassList.CaseClassId])}">{$CasesClassList.ClassName}</a></li>
+                        {/volist}
+                    </ul>
+                </li>
+                <li><a href="{:url('index/Contact/index')}" class="">联系我们</a></li>
+                <li><a href="{:url('index/About/index')}" class="">关于我们</a></li>
+                <li><a href="{:url('index/Message/index')}" class="">在线留言</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="rslides_container">
+    <ul class="rslides" id="slider">
+        <li><a target="_blank" title="{$webInfo.slide01_title|default='幻灯大图一'}"><img src="__STATIC__/images/default/{$webInfo.slide01_img|default='1.jpg'}"/></a></li>
+        <li><a target="_blank" title="{$webInfo.slide02_title|default='幻灯大图二'}"><img src="__STATIC__/images/default/{$webInfo.slide02_img|default='2.jpg'}"/></a></li>
+        <li><a target="_blank" title="{$webInfo.slide03_title|default='幻灯大图三'}"><img src="__STATIC__/images/default/{$webInfo.slide03_img|default='3.jpg'}"/></a></li>
+    </ul>
+</div>
+<div id="breadcrumb">
+    <div class="breadcrumb">
+        <div class="right">
+            <h3>关注微博</h3>
+            <div class="weibo">
+                <wb:follow-button uid="{$contact.weibo|default='5312068257'}" type="red_1" width="67" height="24" ></wb:follow-button>
+            </div>
+        </div>
+        <div class="left">
+            <h3>动态新闻</h3>
+            <div class="notice">
+                <ul class="newsList">
+                    {assign name="count" value="1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第一部分}
+                    {volist name="$NewsInfos" id="NewsInfoList"}
+                        {if condition="$count < 7"}
+                        <li><a href="{$NewsInfoList.newsId}" title="{$NewsInfoList.newsname}" target="_blank">{$NewsInfoList.newsname}</a></li>
+                        {/if}
+                    {assign name="count" value="$count+1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第二部分}
+                    {/volist}
+                </ul>
+                <ul class="swap">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

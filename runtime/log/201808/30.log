@@ -1,0 +1,61 @@
+---------------------------------------------------------------
+[ 2018-08-30T11:40:41+08:00 ] 127.0.0.1 GET /
+[ info ] qy.me/ [运行时间：6.583095s][吞吐率：0.15req/s] [内存消耗：3,366.05kb] [文件加载：93]
+[ info ] [ LANG ] I:\Project\WebServer\www\project\Enterprise\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'qy.me',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
+  'sec-metadata' => 'cause=forced, destination=document, target=top-level, site=cross-site',
+  'dnt' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-AS;q=0.8,en-US;q=0.7,en-AU;q=0.6,en-XA;q=0.5,en;q=0.4',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_5a0192f8207da980c77f112b59310c12=1535508652; Hm_lpvt_5a0192f8207da980c77f112b59310c12=1535508652',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] I:\Project\WebServer\www\project\Enterprise\application\index\view\index\index.html [ array (
+  0 => 'webInfo',
+  1 => 'ContactInfo',
+  2 => 'link',
+  3 => 'GoodsClassLists',
+  4 => 'NewsClassLists',
+  5 => 'CasesClassLists',
+  6 => 'NewsInfos',
+  7 => 'CooperateLists',
+  8 => 'ScopeLists',
+  9 => 'AboutLists',
+  10 => 'GoodsInfoLists',
+  11 => 'CaseInfoLists',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.619538s ] mysql:host=127.0.0.1;dbname=qy;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_webinfo` [ RunTime:0.059947s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_webinfo` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_contact` [ RunTime:0.002891s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_contact` [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_link` [ RunTime:0.002254s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_link` [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_goodsclass` [ RunTime:0.002277s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_goodsclass` [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsclass` [ RunTime:0.002004s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsclass` [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_caseclass` [ RunTime:0.003513s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_caseclass` [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_newsinfo` [ RunTime:0.002259s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_newsinfo` [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_cooperate` [ RunTime:0.001987s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_cooperate` [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_scope` [ RunTime:0.001851s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_scope` [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_about` [ RunTime:0.003123s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_about` [ RunTime:0.000433s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_goodsinfo` [ RunTime:0.001910s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_goodsinfo` [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qy_caseinfo` [ RunTime:0.002991s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qy_caseinfo` LIMIT 1 [ RunTime:0.002493s ]
+[ sql ] [ SQL ] SELECT * FROM `qy_caseinfo` ORDER BY `create_time` DESC LIMIT 0,8 [ RunTime:0.000454s ]
