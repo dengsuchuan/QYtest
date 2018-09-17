@@ -19,7 +19,7 @@ return [
     // 用户名
     'username'        => 'root',
     // 密码
-    'password'        => 'www.geekln.cn',
+    'password'        => '123456789',
     // 端口
     'hostport'        => '',
     // 连接dsn

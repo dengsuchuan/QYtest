@@ -21,4 +21,23 @@ class Product extends Base
 		$this->assign("goodsClassName",$goodsClassName);
     	return $this->view->fetch("productClassifyShow");
 	}
+
+    //详细显示
+    public function productInfo(){
+        $id = input("id");
+        $frontId = $id-1;
+        $afterId = $id+1;
+
+        $newsArrayFront = GoodsInfo::where('newsId',$frontId)->select();
+        $newsArray = GoodsInfo::where('newsId',$id)->select();
+        $newsArrayAfter = GoodsInfo::where('newsId',$afterId)->select();
+        $classId = $newsArray[0]['goodsclassid'];
+        $classNewsList = GoodsInfo::where('goodsclassid',$classId)->select();
+
+        $this->view->assign("newsArrayFront",$newsArrayFront);
+        $this->view->assign("newsArray",$newsArray);
+        $this->view->assign("newsArrayAfter",$newsArrayAfter);
+        $this->view->assign("classNewsList",$classNewsList);
+        return $this->view->fetch("view-productInfo");
+    }
 }

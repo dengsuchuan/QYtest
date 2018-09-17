@@ -60,7 +60,7 @@
                     {assign name="count" value="1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第一部分}
                     {volist name="$NewsInfos" id="NewsInfoList"}
                         {if condition="$count < 7"}
-                        <li><a href="{$NewsInfoList.newsId}" title="{$NewsInfoList.newsname}" target="_blank">{$NewsInfoList.newsname}</a></li>
+                        <li><a href="{:url('index/news/newsInfo',['id'=>$NewsInfoList.newsId])}" title="{$NewsInfoList.newsname}" target="_blank">{$NewsInfoList.newsname}</a></li>
                         {/if}
                     {assign name="count" value="$count+1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第二部分}
                     {/volist}

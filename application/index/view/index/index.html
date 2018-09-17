@@ -3,7 +3,7 @@
     {volist name="$ScopeLists" id="ScopeList"}
     <div class="serviceBox">
         <div class="serviceBoxInfo">
-            <h3><i class="{$ScopeList.icon|default='icon-align-right'} icon-2x"></i><span><a href="#" target="_blank" title="{$ScopeList.title|default='默认业务选项'}">{$ScopeList.title|default='默认业务选项'}</a></span></h3>
+            <h3><i class="{$ScopeList.icon|default='icon-align-right'} icon-2x"></i><span><span  title="{$ScopeList.title|default='默认业务选项'}">{$ScopeList.title|default='默认业务选项'}</span></span></h3>
             <div class="line"></div>
             <div class="serviceBoxTxt">{$ScopeList.describe|default='默认业务描述默认业务描述默认业务描述默认业务描述'}</div>
         </div>
@@ -14,7 +14,7 @@
     {volist name="$AboutLists" id="AboutList"}
     <div class="aboutUs">
         <div class="allTitle"><span>« 关于我们</span></div>
-        <div class="aboutUsThumb"> <a href="#" target="_blank" title="关于我们"> <img alt="关于我们" src="__STATIC__/about/images/{$AboutList.images}"/> </a> </div>
+        <div class="aboutUsThumb"> <a href="{:url('index/About/index')}" title="关于我们"> <img alt="关于我们" src="__STATIC__/about/images/{$AboutList.images}"/> </a> </div>
         <div class="aboutUsTxt">
             <p>{$AboutList.describe|msubstr}</p>
             <p class="more"><a href="{:url('index/About/index')}" target="_blank" title="关于我们">阅读更多 »</a></p>
@@ -69,7 +69,7 @@
                 {volist name="$NewsInfos" id="NewsInfo" }
                     {eq name='$NewsInfo.newsclassid' value='$NewsClassList.NewsClassId'}
                         {if condition="$count < 7"}
-                            <li><span>{$NewsInfo.create_time}</span><i>»</i> <a href="#" target="_blank" title="{$NewsInfo.newsname}">{$NewsInfo.newsname}</a></li>
+                            <li><span>{$NewsInfo.create_time}</span><i>»</i> <a href="{:url('index/news/newsInfo',['id'=>$NewsInfo.newsId])}" title="{$NewsInfo.newsname}">{$NewsInfo.newsname}</a></li>
                         {assign name="count" value="$count+1"}{//这里解决获取所有动态新闻之后分类后的输出数量  组合第二部分}
                         {/if}
                     {/eq}

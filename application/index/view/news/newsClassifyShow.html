@@ -29,7 +29,7 @@
         {volist name="$newsInfo" id="newsInfoList"}
         <li>
             <span>{$newsInfoList.create_time}</span><i class="icon-angle-right"></i>
-            <a href="#{$newsInfoList.newsId}" title="{$newsInfoList.newsname}" target="_blank">{$newsInfoList.newsname}</a>
+            <a href="{:url('index/news/newsInfo',['id'=>$newsInfoList.newsId])}" title="{$newsInfoList.newsname}" target="_blank">{$newsInfoList.newsname}</a>
         </li>
         {/volist}
       </ul>
