@@ -49,7 +49,7 @@
       <h3><i class="icon-caret-down"></i>相关产品</h3>
       <ul class="bxslider" id="postbx">
         {volist name="$classNewsList" id="goodsList" offset="1" length='10'}
-        <li> <a href="{}" target="_blank" title="{}"> <img alt="{$goodsList.goodsname}" src="__STATIC__/images/goods/{$goodsList.images}"/> </a> </li>
+        <li> <a href="{:url('index/product/productInfo',['id'=>$goodsList.newsId])}#breadcrumb" title="{$goodsList.goodsname}"> <img alt="{$goodsList.goodsname}" src="__STATIC__/images/goods/{$goodsList.images}"/> </a> </li>
         {/volist}
       </ul>
     </div>

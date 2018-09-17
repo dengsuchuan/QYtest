@@ -30,12 +30,12 @@
         {volist name="$GoodsInfo" id="GoodsInfoList"}
         <li>
           <div class="thumbnail">
-            <a href="#{$GoodsInfoList.id|default='默认'}" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank">
+            <a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb" title="{$GoodsInfoList.goodsname|default='默认'}">
                 <img alt="{$GoodsInfoList.goodsname|default='默认'}" src="__STATIC__/images/goods/{$GoodsInfoList.images|default='默认'}"/>
             </a>
-            <div class="onBackground"> <a href="#{$GoodsInfoList.id|default='默认'}" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank"></a> </div>
+            <div class="onBackground"> <a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb" title="{$GoodsInfoList.goodsname|default='默认'}"></a> </div>
           </div>
-          <h2> <a href="#{$GoodsInfoList.newsId|default='默认'}l" title="{$GoodsInfoList.goodsname|default='默认'}" target="_blank">{$GoodsInfoList.goodsname|default='默认】'}</a> </h2>
+          <h2> <a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb" title="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}" >{$GoodsInfoList.goodsname|default='默认】'}</a> </h2>
         </li>
         {/volist}
       </ul>

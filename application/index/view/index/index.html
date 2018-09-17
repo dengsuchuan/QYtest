@@ -38,10 +38,10 @@
                 {eq name='$GoodsInfoList.goodsclassid' value='$GoodsClassList.GoodsClassId'}
                 {if condition="$count < 5"}
                 <li>
-                    <div class="productsThumb"> <a href="#" target="_blank" title="{$GoodsInfoList.goodsname}"> <img alt="{$GoodsInfoList.goodsname}" src="__STATIC__/images/goods/{$GoodsInfoList.images}"/> </a>
-                        <div class="onBackground"> <a href="#" target="_blank" title="{$GoodsInfoList.goodsname}"><span>+</span></a> </div>
+                    <div class="productsThumb"> <a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb" title="{$GoodsInfoList.goodsname}"> <img alt="{$GoodsInfoList.goodsname}" src="__STATIC__/images/goods/{$GoodsInfoList.images}"/> </a>
+                        <div class="onBackground"> <a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb"  title="{$GoodsInfoList.goodsname}"><span>+</span></a> </div>
                     </div>
-                    <h2><a href="#" target="_blank" title="{$GoodsInfoList.goodsname}">{$GoodsInfoList.goodsname}</a></h2>
+                    <h2><a href="{:url('index/product/productInfo',['id'=>$GoodsInfoList.newsId])}#breadcrumb" title="{$GoodsInfoList.goodsname}">{$GoodsInfoList.goodsname}</a></h2>
                 </li>
                 {assign name="count" value="$count+1"}
                 {/if}

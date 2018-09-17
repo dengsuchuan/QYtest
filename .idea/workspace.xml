@@ -1,58 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e04ee798-7c51-47c3-a4f1-1b3775df0581" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/index/view/news/view-newsInfo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/index/view/product/view-productInfo.html" afterDir="false" />
+    <list default="true" id="e04ee798-7c51-47c3-a4f1-1b3775df0581" name="Default" comment="添加新闻详情、产品详情">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/news/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/news/newsClassifyShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/news/newsClassifyShow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/news/view-newsInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/news/view-newsInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/product/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/product/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/public/slide.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/public/slide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201805/31.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/02.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/03.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/04.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/06.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201806/26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201807/22.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/1534460154-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/16.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/19.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201808/30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/013b097aac99c10c23386edd6db7479c.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/271c5c3fcd09a60524af8b59c81c4941.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/4c2e1a89cd22aabd530aa8c0b16c73f2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/656e55c73b94c9cf8c5703761d155ecf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/69d4ec54536a2a82270a5432dfeb0ce7.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/738a6ff9bbfcfc79a2369f74e6a5a454.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/7cf8051474620b958734e66b813597cc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/84c3eb2b3d29564139de2e3b0d108615.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/859d7eb11dc49b1637055541c4cb5fb2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/8be2f6819799271695c5a2678a64c4bf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/a71552e114856cc6fe3b2bc32d3a46cc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/ab38c3afb1bd057496dbb035c953b138.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/c094835628d30b90305f412dc2f467ab.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/c9f8a56aaa640d20adf8a8c3548b1b26.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/d54d463e212dfe365aa555add75cfd15.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/e4f5706d233ce124f032e2064deee323.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/e88b8a67233a982985585f57f648331b.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/ee13c6bd7739ac57e0862d10318f9677.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/f1b61b2ac71c7f0f33d0c363d509f440.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/fab5ea9edb1e88e0fcc9d8029d49943b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/product/productClassifyShow.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/product/productClassifyShow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/product/view-productInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/product/view-productInfo.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,29 +35,31 @@
       <usages-collector id="statistics.php.new.class" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="23" />
-          <entry key="php" value="6" />
+          <entry key="html" value="26" />
+          <entry key="php" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="827" />
-          <entry key="php" value="564" />
+          <entry key="html" value="904" />
+          <entry key="php" value="566" />
+          <entry key="txt" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.php.new.test" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="827" />
-          <entry key="PHP" value="564" />
+          <entry key="HTML" value="904" />
+          <entry key="PHP" value="566" />
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.command.options" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="23" />
-          <entry key="PHP" value="6" />
+          <entry key="HTML" value="26" />
+          <entry key="PHP" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -115,26 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="40" column="155" lean-forward="true" selection-start-line="40" selection-start-column="155" selection-end-line="40" selection-end-column="179" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/view/product/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="32" column="53" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/controller/Product.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+            <state relative-caret-position="598">
+              <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="136" />
             </state>
           </provider>
         </entry>
@@ -142,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/index/view/product/view-productInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+            <state relative-caret-position="592">
+              <caret line="51" column="124" selection-start-line="51" selection-start-column="124" selection-end-line="51" selection-end-column="124" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -221,7 +160,6 @@
         <option value="$PROJECT_DIR$/application/index/model/Scope.php" />
         <option value="$PROJECT_DIR$/application/index/model/CasesClass.php" />
         <option value="$PROJECT_DIR$/application/common.php" />
-        <option value="$PROJECT_DIR$/application/index/model/GoodsInfo.php" />
         <option value="$PROJECT_DIR$/application/index/model/About.php" />
         <option value="$PROJECT_DIR$/application/index/model/CaseInfo.php" />
         <option value="$PROJECT_DIR$/application/index/controller/CC.php" />
@@ -233,7 +171,6 @@
         <option value="$PROJECT_DIR$/application/index/controller/Cases.php" />
         <option value="$PROJECT_DIR$/application/index/view/cases/caseClassifyShow.html" />
         <option value="$PROJECT_DIR$/application/index/view/cases/index.html" />
-        <option value="$PROJECT_DIR$/application/index/view/product/productClassifyShow.html" />
         <option value="$PROJECT_DIR$/application/index/controller/About.php" />
         <option value="$PROJECT_DIR$/application/index/model/Message.php" />
         <option value="$PROJECT_DIR$/application/index/controller/Message.php" />
@@ -245,11 +182,13 @@
         <option value="$PROJECT_DIR$/application/index/view/news/newsClassifyShow.html" />
         <option value="$PROJECT_DIR$/application/index/controller/News.php" />
         <option value="$PROJECT_DIR$/application/index/view/public/slide.html" />
-        <option value="$PROJECT_DIR$/application/index/view/index/index.html" />
         <option value="$PROJECT_DIR$/application/index/view/news/index.html" />
         <option value="$PROJECT_DIR$/application/index/view/news/view-newsInfo.html" />
-        <option value="$PROJECT_DIR$/application/index/view/product/index.html" />
         <option value="$PROJECT_DIR$/application/index/controller/Product.php" />
+        <option value="$PROJECT_DIR$/application/index/model/GoodsInfo.php" />
+        <option value="$PROJECT_DIR$/application/index/view/index/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/product/index.html" />
+        <option value="$PROJECT_DIR$/application/index/view/product/productClassifyShow.html" />
         <option value="$PROJECT_DIR$/application/index/view/product/view-productInfo.html" />
       </list>
     </option>
@@ -426,12 +365,20 @@
       <workItem from="1537098528226" duration="85000" />
       <workItem from="1537098625454" duration="193000" />
       <workItem from="1537098829965" duration="2158000" />
-      <workItem from="1537144865638" duration="7896000" />
+      <workItem from="1537144865638" duration="8761000" />
     </task>
+    <task id="LOCAL-00001" summary="添加新闻详情、产品详情">
+      <created>1537153002879</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537153002879</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121030000" />
+    <option name="totallyTimeSpent" value="121895000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -443,10 +390,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-63" y="310" width="1910" height="783" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21459228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21344717" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -472,6 +419,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加新闻详情、产品详情" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加新闻详情、产品详情" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application/s/view/public/footer.html" />
@@ -529,13 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/GoodsInfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/model/Link.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -577,13 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/GoodsClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -657,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/about/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -720,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/view/product/productClassifyShow.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="19" column="132" selection-start-line="19" selection-start-column="132" selection-end-line="19" selection-end-column="132" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/news/newsClassifyShow.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -755,31 +678,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/GoodsInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/GoodsClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        <state relative-caret-position="559">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/product/productClassifyShow.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="35" column="124" selection-start-line="35" selection-start-column="124" selection-end-line="35" selection-end-column="124" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/product/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="32" column="53" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="53" />
+          <caret line="32" column="97" selection-start-line="32" selection-start-column="97" selection-end-line="32" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="40" column="155" lean-forward="true" selection-start-line="40" selection-start-column="155" selection-end-line="40" selection-end-column="179" />
+        <state relative-caret-position="598">
+          <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="136" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/view/product/view-productInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="36" column="79" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
+        <state relative-caret-position="592">
+          <caret line="51" column="124" selection-start-line="51" selection-start-column="124" selection-end-line="51" selection-end-column="124" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
