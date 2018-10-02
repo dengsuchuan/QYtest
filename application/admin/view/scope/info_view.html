@@ -1,0 +1,136 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>业务范围</cite>
+        </a>
+      </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="{:url()}" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+
+<div class="x-body" >
+    <div class="container-wrap">
+        <div class="box-1">
+            <fieldset class="layui-elem-field site-demo-button" style="margin-top: 20px;padding: 20px;background-color: #F2F2F2;">
+                <form action="" method="post" class="layui-form layui-form-pane">
+                    <legend style="font-size: 25px;">业务范围</legend>
+                        <div style="padding: 20px; background-color: #F2F2F2;">
+                            <div class="layui-row layui-col-space15">
+                                {volist name="$scopeInfo" id="scopeInfoList"}
+                                <div class="layui-col-md12">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header">第{$scopeInfoList.id}个 <span class="{$scopeInfoList.icon} icon-2x" style="padding:20px;font-size: 16px;color:#E04D47;"></span></div>
+                                        <div class="layui-card-body">
+                                            <div>
+                                                <label for="name" class="layui-form-label">图标</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" id="icon{$scopeInfoList.id}" required=""
+                                                           autocomplete="off" class="layui-input" value="{$scopeInfoList.icon}">
+                                                    <input type="hidden" id="id{$scopeInfoList.id}" value="{$scopeInfoList.id}">
+                                                </div>
+                                            </div>
+                                            <div style="margin-top: 10px;">
+                                                <label for="name" class="layui-form-label">标题</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" id="title{$scopeInfoList.id}" required=""
+                                                           autocomplete="off" class="layui-input" value="{$scopeInfoList.title}">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item layui-form-text" style="margin-top: 10px;">
+                                                <label class="layui-form-label">
+                                                    站点描述
+                                                </label>
+                                                <div class="layui-input-block">
+                                                    <textarea placeholder="请输入内容" id="description{$scopeInfoList.id}" class="layui-textarea">{$scopeInfoList.describe}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/volist}
+                            </div>
+                        </div>
+                    <div class="layui-form-item">
+                        <button class="layui-btn" lay-submit="" lay-filter="add">提交图标修改</button>
+                    </div>
+                </form>
+            </fieldset>
+                <fieldset class="layui-elem-field site-demo-button" style="margin-top: 20px;padding: 20px;background-color: #F2F2F2;">
+                    <legend style="font-size: 25px;">图标参考 - Font Awesome</legend>
+                    <iframe src="http://www.bootcss.com/p/font-awesome/#icons-new" width="100%" height="500px;" frameborder="0" >
+                    </iframe>
+                </fieldset>
+        </div>
+    </div>
+</div>
+<script>
+    //普通的文本修改
+    layui.use(['form'], function(){
+        var form = layui.form,layer = layui.layer;
+        $ = layui.jquery;
+
+        form.on('submit(add)', function(){
+            /*****************************************************************/
+
+            var icon01 = $("#icon1").val();
+            var icon02 = $("#icon2").val();
+            var icon03 = $("#icon3").val();
+
+            var title1 = $("#title1").val();
+            var title2 = $("#title2").val();
+            var title3 = $("#title3").val();
+
+            var description1 = $("#description1").val();
+            var description2 = $("#description2").val();
+            var description3 = $("#description3").val();
+
+            var array  = [{
+                "id":"1",
+                "icon":icon01,
+                "describe":description1,
+                "title":title1
+            },{
+                "id":"2",
+                "icon":icon02,
+                "describe":description2,
+                "title":title2
+            },{
+                "id":"3",
+                "icon":icon03,
+                "describe":description3,
+                "title":title3
+            }];
+            var data = JSON.stringify(array);
+            console.log(data);
+            var urlDoc = "{:url('admin/Scope/edit')}";//文本修改路径函数
+            var typeStr = "修改";
+
+            edit(urlDoc,typeStr,{"json":data});//url地址，文件路径，富文本内容
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,typeStr,data) {
+        $.post(urlDoc,data,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+
+</script>
+</body>
+</html>

@@ -28,7 +28,7 @@
       <h2>{$newsArrayList.newsname}</h2>
       <div class="postmeta">
           <span>日期：{$newsArrayList.create_time}</span>
-          <span>分类：<a href="{}" title="{}" >{$newsArrayList.newsclassid}</a></span>
+          <span>分类：<a href="{:url('index/News/newsClassifyShow',['newsClassId'=>$newsArrayList.newsclassid])}#container" title="{$newsArrayList.newsclassid|getNewsClassName}" >{$newsArrayList.newsclassid|getNewsClassName}</a></span>
           <span>浏览：{$newsArrayList.lookglance}次</span>
       </div>
       <!--新闻的图片-->
@@ -36,7 +36,9 @@
       <!--<img style="width: 600px; height: 400px;" src="{}" alt="{}" height="400" border="0" vspace="0" width="600"/>-->
       <!--</p>-->
       <!--正文-->
-      <p>{$newsArrayList.newscontent}</p>
+      <div>
+          <?php echo $newsArrayList['newscontent'] ?>
+      </div>
       {/volist}
     </div>
     <div class="pn">

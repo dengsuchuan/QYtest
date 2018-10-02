@@ -1,0 +1,68 @@
+{include file="public/header" /}
+<body>
+<div class="x-body ">
+    <form  class="layui-form">
+        {volist name="$LinkInfo" id="LinkInfoList"}
+        <div class="layui-form-item">
+            <label class="layui-form-label">站点名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" autocomplete="off" placeholder="请输入站点名称" class="layui-input" value="{$LinkInfoList.title}">
+                <input type="hidden" name="id" value="{$LinkInfoList.id}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">站点地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="realm" autocomplete="off" placeholder="请输入站点地址 http://" class="layui-input" value="{$LinkInfoList.realm}">
+            </div>
+        </div>
+        {/volist}
+        <div class="layui-form-item" align="center">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-radius" lay-submit lay-filter="addAdmin" id="addAdmin">
+                    提交修改
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+
+    layui.use(['form'], function(){
+        var form = layui.form,layer = layui.layer;
+        $ = layui.jquery;
+
+        form.on('submit(addAdmin)', function(data){
+            //*****************************************************************
+            //配置
+            var urlDoc = "{:url('admin/Link/edit')}";//文本上传路径函数
+            var typeStr = "修改";
+
+            edit(urlDoc,typeStr,data);//url地址，文件路径，富文本内容
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,typeStr,data) {
+        $.post(urlDoc,data.field,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+
+
+</script>
+</body>
+
+</html>

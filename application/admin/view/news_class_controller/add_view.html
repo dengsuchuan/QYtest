@@ -1,0 +1,58 @@
+{include file="public/header" /}
+<body>
+<div class="x-body ">
+    <form  class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类名 <span style="color: red">*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="ClassName" lay-verify="title" autocomplete="off" placeholder="请输入分类名" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-radius" lay-submit lay-filter="addAdmin" id="addAdmin">
+                    确认
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+
+    layui.use(['form'], function(){
+        var form = layui.form,layer = layui.layer;
+        $ = layui.jquery;
+
+        form.on('submit(addAdmin)', function(data){
+            //*****************************************************************
+            //配置
+            var urlDoc = "{:url('admin/NewsClassController/add')}";//文本上传路径函数
+            var typeStr = "添加";
+            edit(urlDoc,typeStr,data);
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,typeStr,data) {
+        $.post(urlDoc,data.field,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+
+
+</script>
+</body>
+
+</html>

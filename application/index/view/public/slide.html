@@ -1,11 +1,11 @@
 <body>
 <div id="header">
     <div class="header">
-        <div class="logo"> <a href="index.htm" title="{$webInfo.title|default='默认主题'}"><img src="__STATIC__/skin/ecms079/images/logo.png" alt="{$webInfo.title|default='默认主题'}"/></a> </div>
+        <div class="logo"> <a href="{:url('index/Index/index')}" title="{$webInfo.title|default='默认主题'}"><img src="__STATIC__/about/images/{$webInfo.logo|default='logo.png'}" alt="{$webInfo.title|default='默认主题'}"/></a> </div>
         <div class="language"> <span class="on">简</span> <span><a href="" id="StranLink">繁</a></span> </div>
         <div class="menu" id="menu">
             <ul>
-                <li><a href="{:url('index/Index/index')}" class="">首页</a></li>
+                <li><a href="{:url('index/index/index')}" class="">首页</a></li>
                 <li>
                     <a href="{:url('index/product/index')}"  class="">产品中心</a>
                     <ul class="sub-menu">
@@ -40,9 +40,9 @@
 </div>
 <div class="rslides_container">
     <ul class="rslides" id="slider">
-        <li><a target="_blank" title="{$webInfo.slide01_title|default='幻灯大图一'}"><img src="__STATIC__/images/default/{$webInfo.slide01_img|default='1.jpg'}"/></a></li>
-        <li><a target="_blank" title="{$webInfo.slide02_title|default='幻灯大图二'}"><img src="__STATIC__/images/default/{$webInfo.slide02_img|default='2.jpg'}"/></a></li>
-        <li><a target="_blank" title="{$webInfo.slide03_title|default='幻灯大图三'}"><img src="__STATIC__/images/default/{$webInfo.slide03_img|default='3.jpg'}"/></a></li>
+        <li><a target="_blank" title="{$webInfo.slide01_title|default='幻灯大图一'}"><img src="__STATIC__/images/default/{$webInfo.slide01_img|default='1.jpg'}" width="1600" height="460" /></a></li>
+        <li><a target="_blank" title="{$webInfo.slide02_title|default='幻灯大图二'}"><img src="__STATIC__/images/default/{$webInfo.slide02_img|default='2.jpg'}" width="1600" height="460" /></a></li>
+        <li><a target="_blank" title="{$webInfo.slide03_title|default='幻灯大图三'}"><img src="__STATIC__/images/default/{$webInfo.slide03_img|default='3.jpg'}" width="1600" height="460" /></a></li>
     </ul>
 </div>
 <div id="breadcrumb">

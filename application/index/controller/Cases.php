@@ -21,4 +21,23 @@ class Cases extends Base
 		$this->assign("caseClassName",$caseClassName);
 		return $this->view->fetch("caseClassifyShow");
 	}
+
+    //详细显示
+    public function casesInfo(){
+        $id = input("id");
+        $frontId = $id-1;
+        $afterId = $id+1;
+
+        $casesArrayFront = CaseInfo::where('caseId',$frontId)->select();
+        $casesArray = CaseInfo::where('caseId',$id)->select();
+        $casesArrayAfter = CaseInfo::where('caseId',$afterId)->select();
+        $classId = $casesArray[0]['caseclassid'];
+        $classcasesList = CaseInfo::where('caseclassid',$classId)->select();
+
+        $this->view->assign("casesArrayFront",$casesArrayFront);
+        $this->view->assign("casesArray",$casesArray);
+        $this->view->assign("casesArrayAfter",$casesArrayAfter);
+        $this->view->assign("classcasesList",$classcasesList);
+        return $this->view->fetch("view-casesInfo");
+    }
 }

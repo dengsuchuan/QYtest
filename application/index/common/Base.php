@@ -20,6 +20,7 @@ class Base extends Controller
         $this->getLink();
         $this->getNav();
         $this->getTrendsNews();
+        $this->is_open();
     }
 
     //读取网站配置信息
@@ -55,4 +56,34 @@ class Base extends Controller
         $newsInfo = NewsInfo::all();
         $this->view->assign('NewsInfos',$newsInfo);
     }
+
+    //检查站点是否关闭
+    public function is_open(){
+        //1.获取当前站点状态
+        $isOpen = WebInfo::where('status',1)->value('status');
+
+        //2.如果站点已经关闭，那么只允许关闭前台
+        if($isOpen == 0){
+            $this->view->assign('title','站点已关闭 · 静影探风');
+            //关闭网站
+            $info = <<<'INFO'
+<head>
+    <title>站点关闭</title>
+</head>
+<body style="background-color: #0f0f0f">
+    <center>
+        <h1 style="color: white;font-size: 60px;margin-top: 400px;">
+            【站点已关闭，暂时无法访问】
+        </h1>
+        <h2 style="color: red;font-size: 50px;">
+            ###  预计维护时长:12小时  ###
+        </h2>
+    </center>
+</body>
+INFO;
+            exit($info);
+        }
+
+    }
+
 }

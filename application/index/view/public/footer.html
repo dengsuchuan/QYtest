@@ -29,8 +29,8 @@
             <div class="phone"> <i class="icon-phone"></i> <a href="tel:{$contact.telephone|default='400-1234-5678'}" rel="nofollow">{$ContactInfoList.telephone|default='400-1234-5678【默认值】'}</a> </div>
             {/volist}
             <div class="copyright">
-                <p>Copyright <a href="{$webInfo.realm|default='https://www.geekln.cn/'}" target="_blank">{$webInfo.title|default='默认标题'}</a> Rights Reserved. {$webInfo.record|default='川ICP备1234567-9号【默认值】'} . 统计代码</p>
-                <p> 企业站点系统 @ <a href="https://www.geekln.cn/" title="静影探风" target="_blank">静影探风</a>. </p>
+                <p>Copyright <a href="{$webInfo.realm|default='https://www.geekln.cn/'}" target="_blank">{$webInfo.title|default='默认标题'}</a> {$webInfo.record|default='川ICP备1234567-9号【默认值】'}</p>
+                <p> 企业站点系统 @ <a href="{:url('admin/Login/loginSystemShow')}" title="后台管理" target="_blank">后台管理</a>. </p>
             </div>
         </div>
         <div class="clear"></div>

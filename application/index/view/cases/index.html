@@ -29,12 +29,12 @@
         {volist name="$caseInfo"  id="CaseInfoList"}
         <li>
           <div class="thumbnail">
-              <a href="{$CaseInfoList.caseId}" title="{$CaseInfoList.casename}" target="_blank">
+              <a href="{:url('index/cases/casesInfo',['id'=>$CaseInfoList.caseId])}#breadcrumb" title="{$CaseInfoList.casename}">
                   <img alt="{$CaseInfoList.casename}" src="__STATIC__/images/case/{$CaseInfoList.images}"/>
               </a>
-            <div class="onBackground"> <a href="{$CaseInfoList.caseId}" title="{$CaseInfoList.casename}" target="_blank"></a> </div>
+            <div class="onBackground"> <a href="{:url('index/cases/casesInfo',['id'=>$CaseInfoList.caseId])}#breadcrumb" title="{$CaseInfoList.casename}"></a> </div>
           </div>
-          <h2> <a href="{$CaseInfoList.caseId}" title="{$CaseInfoList.casename}" target="_blank">{$CaseInfoList.casename}</a> </h2>
+          <h2> <a href="{:url('index/cases/casesInfo',['id'=>$CaseInfoList.caseId])}#breadcrumb" title="{$CaseInfoList.casename}">{$CaseInfoList.casename}</a> </h2>
         </li>
         {/volist}
       </ul>

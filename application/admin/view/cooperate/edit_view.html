@@ -1,0 +1,117 @@
+{include file="public/header" /}
+<body>
+<div class="x-body" >
+    <div class="container-wrap">
+        <div class="box-1">
+            <form class="layui-form layui-form-pane" action="">
+                {volist name="$cooperateInfo" id="cooperateInfoList"}
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        名称
+                    </label>
+                    <div class="layui-input-block">
+                        <input type="text" name="CooperateTitle" required=""
+                               autocomplete="off" class="layui-input" value="{$cooperateInfoList.CooperateTitle}">
+                        <input type="hidden" name="CooperateId" value="{$cooperateInfoList.CooperateId}" id="CooperateId">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        官网
+                    </label>
+                    <div class="layui-input-block">
+                        <input type="text" name="CooperateUrl" required=""
+                               autocomplete="off" class="layui-input" value="{$cooperateInfoList.CooperateUrl}">
+                    </div>
+                </div>
+                <div class="layui-form-item" align="center">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="upload1">选择封面图片</button>
+                        <div class="layui-upload-list">
+                            <img class="layui-upload-img" width="500px" height="300px" id="demo1" src="__STATIC__/images/default/{$cooperateInfoList.CooperateImg}"/>
+                            <p id="demoText"></p>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+                <div class="layui-form-item" align="center">
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-radius" lay-submit lay-filter="add" id="add">
+                            提交修改
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+    layui.use(['upload'], function(){
+        var upload = layui.upload;
+        $ = layui.jquery;
+        var CooperateId = $("#CooperateId").val();
+
+        /*文件上传获取*/
+        var uploadInst = upload.render({
+            elem: '#upload1' //绑定元素
+            ,url: "{:url('admin/Cooperate/upFile')}"//文件上传路径函数
+            ,data:{'id':CooperateId}
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动上传
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    //console.log('修改成功')
+                    layer.msg('图片修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    layer.msg('图片修改失败',{icon:5,time:1000})
+                }
+            }
+        });
+        /*文件上传获取*/
+    });
+
+
+    layui.use(['form'], function(){
+        var form = layui.form,layer = layui.layer;
+        $ = layui.jquery;
+
+        form.on('submit(add)', function(data){
+            //*****************************************************************
+            //配置
+            var urlDoc = "{:url('admin/Cooperate/edit')}";//文本上传路径函数
+            var typeStr = "修改";
+            //console.log(data.field);
+            edit(urlDoc,typeStr,data);//url地址，文件路径
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,typeStr,data) {
+        $.post(urlDoc,data.field,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+</script>
+
+</html>

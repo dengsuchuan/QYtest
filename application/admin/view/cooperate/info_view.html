@@ -1,0 +1,64 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>合作伙伴</cite>
+        </a>
+      </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="{:url()}" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+
+<div class="x-body" >
+    <div class="container-wrap">
+        <div class="box-1">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>操作</th>
+                        <th>名称</th>
+                        <th>官网</th>
+                        <th>Logo图</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="$cooperateInfo" id="cooperateInfoList"}
+                        <tr>
+                            <td width="5%">
+                                <a title="编辑"  onclick="x_admin_show('修改操作','{:url(\'admin/Cooperate/editView\',[\'id\'=>$cooperateInfoList.CooperateId])}')" href="javascript:;">
+                                    <i style="color: green" class="layui-icon"> 修改</i>
+                                </a>
+                            </td>
+                            <td>{$cooperateInfoList.CooperateTitle}</td>
+                            <td><a href="{$cooperateInfoList.CooperateUrl}" target="_blank">{$cooperateInfoList.CooperateUrl}</a></td>
+                            <td width="8%">
+                                <img src="__STATIC__/images/default/{$cooperateInfoList.CooperateImg}"  alt="{$cooperateInfoList.CooperateTitle}">
+                            </td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*删除*/
+    function delete_(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            var url = "{:url('admin/Cooperate/delete')}";
+            var postData ={"id":id};
+            $.post(url,postData,function (result) {
+                if(result === 1 ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:500});
+                }else {
+                    layer.msg('删除失败!',{icon:5,time:500});
+                }
+            },"json");
+        });
+    }
+</script>
+</html>

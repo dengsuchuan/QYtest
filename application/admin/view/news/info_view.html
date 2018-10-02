@@ -1,0 +1,86 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">新闻管理</a>
+        <a>
+          <cite>新闻列表</cite>
+        </a>
+      </span>
+</div>
+
+<div class="x-body" >
+    <xblock>
+        <div class="layui-input-inline">
+            <form class="layui-form" action="{:url('admin/News/selectData')}" method="post">
+                <div class="layui-input-inline">
+                    <input type="text" name="modules" autocomplete="off" placeholder="请输入关键字..." class="layui-input">
+                </div>
+                <button type="submit" class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+            </form>
+        </div>
+        <button class="layui-btn" onclick="x_admin_show('添加新闻','{:url(\'admin/News/addView\')}')"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共{$newsInfoCount}条 · 共{$newsInfoCount/15|getInt}页</span>
+    </xblock>
+    <div class="container-wrap">
+        <div class="box-1">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>操作</th>
+                        <th>标题</th>
+                        <th>分类</th>
+                        <th>访问量</th>
+                        <th>状态</th>
+                        <th>创建日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="$newsInfo" id="newsInfoList"}
+                        <tr>
+                            <td width="5%">
+                                <a title="编辑"  onclick="x_admin_show('修改操作','{:url(\'admin/news/editView\',[\'id\'=>$newsInfoList.newsId])}')" href="javascript:;">
+                                    <i style="color: green" class="layui-icon"></i>
+                                </a>
+                                <a title="删除" onclick="delete_(this,'{$newsInfoList.newsId}')" href="javascript:;">
+                                    <i  style="color:red;" class="layui-icon"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{:url('index/news/newsInfo',['id'=>$newsInfoList.newsId])}#breadcrumb" target="_blank">{$newsInfoList.newsname}</a>
+                            </td>
+                            <td>{$newsInfoList.newsclassid|getNewsClassName}</td>
+                            <td>{$newsInfoList.lookglance} 次</td>
+                            <td>{$newsInfoList.status=='1'?'可用':'隐藏'}</td>
+                            <td>{$newsInfoList.create_time}</td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--------->
+    <div class="page">
+        {$newsInfo|raw}
+    </div>
+</div>
+
+<script>
+    /*删除*/
+    function delete_(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            var url = "{:url('admin/news/delete')}";
+            var postData ={"id":id};
+            $.post(url,postData,function (result) {
+                if(result === 1 ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:500});
+                }else {
+                    layer.msg('删除失败!',{icon:5,time:500});
+                }
+            },"json");
+        });
+    }
+</script>
+</html>

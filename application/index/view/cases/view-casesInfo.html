@@ -1,0 +1,63 @@
+<div id="container">
+  <div class="sidebar">
+    <div class="sideMenu">
+        <h3><a href="{:url('index/Cases/index')}#container" title="案例展示">案例展示</a></h3>
+        <ul>
+            {volist name="$CasesClassLists" id="CasesClassList"}
+            <li class="menu-item"><a href="{:url('index/Cases/caseClassifyShow',['CaseClassId'=>$CasesClassList.CaseClassId])}#container">{$CasesClassList.ClassName}</a></li>
+            {/volist}
+        </ul>
+    </div>
+    <div class="widget">
+      <h3>联系信息</h3>
+      <div class="textwidget">
+          {volist name="$ContactInfo" id="ContactInfoList"}
+          <p><img src="__STATIC__/about/images/online.jpg" alt="联系信息"/></p>
+          <p><b>全国服务热线：{$ContactInfoList.telephone|default='telephone【默认值】'}</b></p>
+          <p><b>移动电话：</b>{$ContactInfoList.cellphone|default='cellphone【默认值】'}</p>
+          <p><b>联系Q Q： </b>{$ContactInfoList.qq|default='qq【默认值】'}</p>
+          <p><b>电子邮箱： </b><a href="mailto:{$ContactInfoList.email|default='email 默认'}">{$ContactInfoList.email|default='email 默认'}</a></p>
+          <p><b>公司地址： </b>{$ContactInfoList.address|default='address【默认值】'}</p>
+          {/volist}
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="post lightbox">
+      {volist name="$casesArray" id="casesArrayList"}
+      <h2>{$casesArrayList.casename}</h2>
+      <div class="postmeta">
+          <span>日期：{$casesArrayList.create_time}</span>
+          <span>分类：<a href="{:url('index/Cases/caseClassifyShow',['CaseClassId'=>$casesArrayList.caseclassid])}#container" title="{$casesArrayList.caseclassid|getCasesClassName}" >{$casesArrayList.caseclassid|getCasesClassName}</a></span>
+          <span>浏览：{$casesArrayList.lookglance}次</span>
+      </div>
+      <!--新闻的图片-->
+      <!--<p style="text-align: center;">-->
+      <!--<img style="width: 600px; height: 400px;" src="{}" alt="{}" height="400" border="0" vspace="0" width="600"/>-->
+      <!--</p>-->
+      <!--正文-->
+      <div>
+          <?php echo $casesArrayList['casecontent'] ?>
+      </div>
+      {/volist}
+    </div>
+    <div class="pn">
+      {foreach $casesArrayFront as $front}<p>上一篇：<a href="{:url('index/cases/casesInfo',['id'=>$front.caseId])}" >{$front.casename}</a></p>{/foreach}
+      {foreach $casesArrayAfter as $after}<p>下一篇：<a href="{:url('index/cases/casesInfo',['id'=>$after.caseId])}" >{$after.casename}</a></p>{/foreach}
+    </div>
+    <div class="relatedProcuts">
+        <!--相关产品轮播 限制5个-->
+        <!--<h3><i class="icon-caret-down"></i>相关产品</h3>-->
+        <!--<ul class="bxslider" id="postbx">-->
+        <!--<li> <a href="{}" target="_blank" title="{}"> <img alt="{}" src="{}"/> </a> </li>-->
+        <!--</ul>-->
+        <!--相关新闻列表 限制5个-->
+        <h3><i class="icon-caret-down"></i>相关新闻</h3>
+        <ul>
+            {volist name="$classcasesList" id="caseList"}
+            <li><i class="icon-angle-right"></i><a href="{:url('index/cases/casesInfo',['id'=>$caseList.caseId])}" title="{$caseList.casename}">{$caseList.casename}</a></li>
+            {/volist}
+        </ul>
+    </div>
+  </div>
+</div>

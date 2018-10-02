@@ -1,0 +1,90 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">产品管理</a>
+        <a>
+          <cite>产品列表</cite>
+        </a>
+      </span>
+</div>
+
+<div class="x-body" >
+    <xblock>
+        <div class="layui-input-inline">
+            <form class="layui-form" action="{:url('admin/Goods/selectData')}" method="post">
+                <div class="layui-input-inline">
+                    <input type="text" name="modules" autocomplete="off" placeholder="请输入关键字..." class="layui-input">
+                </div>
+                <button type="submit" class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+            </form>
+        </div>
+        <button class="layui-btn" onclick="x_admin_show('添加产品','{:url(\'admin/Goods/addView\')}')"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共{$goodsInfoCount}条 · 共{$goodsInfoCount/15|getInt}页</span>
+    </xblock>
+    <div class="container-wrap">
+        <div class="box-1">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>操作</th>
+                        <th>标题</th>
+                        <th>分类</th>
+                        <th>封面图</th>
+                        <th>访问量</th>
+                        <th>状态</th>
+                        <th>创建日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="$goodsInfo" id="goodsInfoList"}
+                        <tr>
+                            <td width="5%">
+                                <a title="编辑"  onclick="x_admin_show('修改操作','{:url(\'admin/Goods/editView\',[\'id\'=>$goodsInfoList.newsId])}')" href="javascript:;">
+                                    <i style="color: green" class="layui-icon"></i>
+                                </a>
+                                <a title="删除" onclick="delete_(this,'{$goodsInfoList.newsId}')" href="javascript:;">
+                                    <i  style="color:red;" class="layui-icon"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{:url('index/product/productInfo',['id'=>$goodsInfoList.newsId])}#breadcrumb" target="_blank">{$goodsInfoList.goodsname}</a>
+                            </td>
+                            <td>{$goodsInfoList.goodsclassid|getGoodsClassName}</td>
+                            <td width="8%">
+                                <img src="__STATIC__/images/goods/{$goodsInfoList.images}"  alt="{$goodsInfoList.goodsname}">
+                            </td>
+                            <td>{$goodsInfoList.lookglance} 次</td>
+                            <td>{$goodsInfoList.status=='1'?'可用':'隐藏'}</td>
+                            <td>{$goodsInfoList.create_time}</td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--------->
+    <div class="page">
+        {$goodsInfo|raw}
+    </div>
+</div>
+
+<script>
+    /*删除*/
+    function delete_(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            var url = "{:url('admin/Goods/delete')}";
+            var postData ={"id":id};
+            $.post(url,postData,function (result) {
+                if(result === 1 ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:500});
+                }else {
+                    layer.msg('删除失败!',{icon:5,time:500});
+                }
+            },"json");
+        });
+    }
+</script>
+</html>

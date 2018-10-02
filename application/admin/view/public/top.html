@@ -1,0 +1,30 @@
+<body>
+<!-- 顶部开始 -->
+<div class="container">
+    <div class="logo"><a href="./index.html">企业模板系统 V1.0</a></div>
+    <div class="left_open">
+        <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+    </div>
+    <ul class="layui-nav left fast-add" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">+新增</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a onclick="x_admin_show('新增产品','{:url(\'admin/Goods/addView\')}')"><i class="iconfont">&#xe6f6;</i>产品</a></dd>
+                <dd><a onclick="x_admin_show('新增新闻','{:url(\'admin/News/addView\')}')"><i class="iconfont">&#xe820;</i>新闻</a></dd>
+                <dd><a onclick="x_admin_show('新增案例','{:url(\'admin/Cases/addView\')}')"><i class="iconfont">&#xe6fa;</i>案例</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="layui-nav right" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">{$Think.session.username}</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="{:url('admin/Login/loginSystemShow')}">切换帐号</a></dd>
+                <dd><a href="{:url('admin/Login/switchLoginU')}">安全退出</a></dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+    </ul>
+
+</div>
+<!-- 顶部结束 -->

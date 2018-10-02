@@ -1,0 +1,85 @@
+{include file="public/header" /}
+<body>
+<div class="x-body ">
+    <form  class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-input-block">标题 <span style="color: red">*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="newsname" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-input-block">正文</label>
+            <div class="layui-input-block">
+                <!-- 加载编辑器的容器 -->
+                <textarea id="container" name="content" type="text/plain" style="height: 400px;"></textarea>
+                <!-- 实例化编辑器 -->
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-input-block">分类</label>
+            <div class="layui-input-block">
+                <select name="newsclassid" lay-filter="aihao">
+                    {volist name="$newsClass" id="newsClassList"}
+                    <option value="{$newsClassList.NewsClassId}">{$newsClassList.ClassName}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item" align="center">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-radius" lay-submit lay-filter="addAdmin" id="addAdmin">
+                    发布
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    var ue = UE.getEditor('container');
+    
+    layui.use(['form','layedit','upload'], function(){
+        var form = layui.form,layer = layui.layer;
+        var layedit = layui.layedit;
+        $ = layui.jquery;
+
+        form.on('submit(addAdmin)', function(data){
+            //*****************************************************************
+            //配置
+            var urlDoc = "{:url('admin/News/add')}";//文本上传路径函数
+            var typeStr = "添加";
+
+            /*获取富文本内容*/
+            var textString = ue.getContent();//获取富文本内容
+            /*获取富文本内容*/
+            var fileUrl = sessionStorage.getItem('fileUrl');
+            edit(urlDoc,fileUrl,textString,typeStr,data);//url地址，文件路径，富文本内容
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,fileUrl,textString,typeStr,data) {
+        data.field.newscontent = textString;
+        data.field.images = fileUrl.toString();
+        $.post(urlDoc,data.field,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+
+
+</script>
+</body>
+
+</html>

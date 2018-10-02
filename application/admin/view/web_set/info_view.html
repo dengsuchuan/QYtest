@@ -1,0 +1,355 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>站点设置</cite>
+        </a>
+      </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="{:url()}" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+
+<div class="x-body" >
+    <div class="container-wrap">
+        <div class="box-1">
+            <form action="" method="post" class="layui-form layui-form-pane">
+                {volist name="$webInfo" id="webInfoList"}
+                <fieldset class="layui-elem-field site-demo-button" style="margin-top: 20px;padding: 20px;background-color: #F2F2F2;">
+                    <legend style="font-size: 25px;">站点基本信息</legend>
+                    <div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">站点状态</label>
+                            <div class="layui-input-block">
+                                <input type="checkbox" {$webInfoList.status==0?'':'checked'}   name="status" lay-skin="switch" lay-filter="switchTest" lay-text="开|关">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="name" class="layui-form-label">
+                                站点标题
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" required=""  
+                                       autocomplete="off" class="layui-input" value="{$webInfoList.title}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="name" class="layui-form-label">
+                                关键字
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="keywords" required=""  
+                                       autocomplete="off" class="layui-input" value="{$webInfoList.keywords}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">
+                                站点描述
+                            </label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="请输入内容" name="description" class="layui-textarea"> {$webInfoList.description}</textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="name" class="layui-form-label">
+                                域名
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="realm" required=""  
+                                       autocomplete="off" class="layui-input"  value="{$webInfoList.realm}">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label for="name" class="layui-form-label">
+                                备案号
+                            </label>
+                            <div class="layui-input-block">
+                                <input type="text" name="record" required="" 
+                                       autocomplete="off" class="layui-input"  value="{$webInfoList.record}">
+                            </div>
+                        </div>
+                        <div style="padding: 20px; background-color: #F2F2F2;">
+                            <div class="layui-row layui-col-space15">
+                                <div class="layui-col-md6">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header">Logo</div>
+                                        <div class="layui-card-body">
+                                            <button type="button" class="layui-btn" id="uploadLogo">选择图片</button>
+                                            <input type="hidden" name="logo" value=""/>
+                                            <div class="layui-upload-list">
+                                                <img class="layui-upload-img" width="400px" height="200px" id="logoImg" src="__STATIC__/about/images/{$webInfoList.logo}"/>
+                                                <p id="logoText"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-md6">
+                                    <div class="layui-card">
+                                        <div class="layui-card-header">Icon</div>
+                                        <div class="layui-card-body">
+                                            <button type="button" class="layui-btn" id="uploadIcon">选择图片</button>
+                                            <input type="hidden" name="icon" value=""/>
+                                            <div class="layui-upload-list">
+                                                <img class="layui-upload-img" width="200px" height="200px" id="iconImg" src="__STATIC__/about/images/{$webInfoList.favicon}"/>
+                                                <p id="iconText"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="layui-elem-field site-demo-button" style="margin-top: 20px;padding: 20px;background-color: #F2F2F2;">
+                    <legend style="font-size: 25px;">首页轮播图</legend>
+
+                    <div style="padding: 20px; background-color: #F2F2F2;">
+                        <div class="layui-row layui-col-space15">
+                            <div class="layui-col-md6">
+                                <div class="layui-card">
+                                    <div class="layui-card-header">轮播图-1</div>
+                                    <div class="layui-card-body">
+                                        <button type="button" class="layui-btn" id="uploadLb1">选择图片</button>
+                                        <input type="hidden" name="slide01_img" value=""/>
+                                        <div class="layui-upload-list">
+                                            <img class="layui-upload-img" width="500px" height="200px" id="lb1Img" src="__STATIC__/images/default/{$webInfoList.slide01_img}"/>
+                                            <p id="lb1Text"></p>
+                                        </div>
+                                        <label for="name" class="layui-form-label">
+                                            标题
+                                        </label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="slide01_title" required=""  
+                                                   autocomplete="off" class="layui-input" value="{$webInfoList.slide01_title}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md6">
+                                <div class="layui-card">
+                                    <div class="layui-card-header">轮播图-2</div>
+                                    <div class="layui-card-body">
+                                        <button type="button" class="layui-btn" id="uploadLb2">选择图片</button>
+                                        <input type="hidden" name="slide02_img" value=""/>
+                                        <div class="layui-upload-list">
+                                            <img class="layui-upload-img" width="500px" height="200px" id="lb2Img" src="__STATIC__/images/default/{$webInfoList.slide02_img}"/>
+                                            <p id="lb2Text"></p>
+                                        </div>
+                                        <label for="name" class="layui-form-label">
+                                            标题
+                                        </label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="slide02_title" required=""  
+                                                   autocomplete="off" class="layui-input" value="{$webInfoList.slide02_title}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-md6">
+                                <div class="layui-card">
+                                    <div class="layui-card-header">轮播图-3</div>
+                                    <div class="layui-card-body">
+                                        <button type="button" class="layui-btn" id="uploadLb3">选择图片</button>
+                                        <input type="hidden" name="slide03_img" value=""/>
+                                        <div class="layui-upload-list">
+                                            <img class="layui-upload-img" width="500px" height="200px" id="lb3Img" src="__STATIC__/images/default/{$webInfoList.slide03_img}"/>
+                                            <p id="lb3Text"></p>
+                                        </div>
+                                        <label for="name" class="layui-form-label">
+                                            标题
+                                        </label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="slide03_title" required=""  
+                                                   autocomplete="off" class="layui-input" value="{$webInfoList.slide02_title}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                {/volist}
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit="" lay-filter="add">提交文本修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    //文件修改，别打开，代码太多
+    layui.use(['upload'], function(){
+        var upload = layui.upload;
+        $ = layui.jquery;
+
+
+        /*文件修改获取*/
+        upload.render({
+            //logo
+            elem: '#uploadLogo' //绑定元素
+            ,url: "{:url('admin/WebSet/uploadLogo')}"//文件修改路径函数
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#logoImg').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动修改
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    //console.log('修改成功')
+                    layer.msg('修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    layer.msg('修改成失败',{icon:5,time:1000})
+                }
+            }
+        });
+        /*文件修改获取*/
+
+        upload.render({
+            //icon
+            elem: '#uploadIcon' //绑定元素
+            ,url: "{:url('admin/WebSet/uploadIcon')}"//文件修改路径函数
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#iconImg').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动修改
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    //$('#iconText').text('修改成功');
+                    layer.msg('修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    //$('#iconText').text('修改失败');
+                    layer.msg('修改失败',{icon:5,time:1000})
+                }
+            }
+        })
+
+        upload.render({
+            //轮播图-1
+            elem: '#uploadLb1' //绑定元素
+            ,url: "{:url('admin/WebSet/uploadLb1')}"//文件修改路径函数
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#lb1Img').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动修改
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    layer.msg('修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    layer.msg('修改失败',{icon:5,time:1000})
+                }
+            }
+        })
+
+
+        upload.render({
+            //轮播图-2
+            elem: '#uploadLb2' //绑定元素
+            ,url: "{:url('admin/WebSet/uploadLb2')}"//文件修改路径函数
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#lb2Img').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动修改
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    layer.msg('修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    layer.msg('修改失败',{icon:5,time:1000})
+                }
+            }
+        })
+
+        upload.render({
+            //轮播图-3
+            elem: '#uploadLb3' //绑定元素
+            ,url: "{:url('admin/WebSet/uploadLb3')}"//文件修改路径函数
+            ,before: function(obj){
+                //预读本地文件示例，不支持ie8
+                obj.preview(function(index, file, result){
+                    $('#lb3Img').attr('src', result); //图片链接（base64）
+                });
+            }
+            //,auto: false //选择文件后不自动修改
+            ,done: function(res){
+                res = JSON.stringify(res);
+                res = JSON.parse(res);
+                if(res){
+                    layer.msg('修改成功',{icon:6,time:1000})
+                }else{
+                    //console.log('修改失败')
+                    layer.msg('修改失败',{icon:5,time:1000})
+                }
+            }
+        })
+
+
+
+
+
+
+
+
+    });
+
+    //普通的文本修改
+    layui.use(['form'], function(){
+        var form = layui.form,layer = layui.layer;
+        $ = layui.jquery;
+
+        form.on('submit(add)', function(data){
+            /*****************************************************************/
+
+            //console.log(data.field);
+            var urlDoc = "{:url('admin/WebSet/edit')}";//文本修改路径函数
+            var typeStr = "更新";
+            //console.log(data.field)
+            edit(urlDoc,typeStr,data);//url地址，文件路径，富文本内容
+            return false;
+        });
+    });
+
+    //提交验证函数
+    function edit(urlDoc,typeStr,data) {
+        $.post(urlDoc,data.field,function(info){
+            if (info) {
+                layer.msg(typeStr + "成功", {icon: 6,time:500},function () {
+                    window.parent.location.reload();  //刷新父级页面
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前弹出层
+                    parent.layer.close(index);
+                });
+            }else{
+                layer.msg(typeStr + "失败",{icon:5,time:500});
+            }
+        },'json');
+    }
+    //*****************************************************************
+
+</script>
+</body>
+</html>

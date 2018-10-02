@@ -95,7 +95,7 @@
         <div class="allTitle"><span>案例展示 »</span></div>
         <ul class="bxslider" id="homebx">
             {volist name="$CaseInfoLists" id="CaseInfoList"}
-            <li> <a href="#" target="_blank" title="{$CaseInfoList.casename}"> <img alt="{$CaseInfoList.casename}" src="__STATIC__/images/case/{$CaseInfoList.images}"/> </a> </li>
+            <li> <a href="{:url('index/cases/casesInfo',['id'=>$CaseInfoList.caseId])}#breadcrumb" title="{$CaseInfoList.casename}"> <img alt="{$CaseInfoList.casename}" src="__STATIC__/images/case/{$CaseInfoList.images}"/> </a> </li>
             {/volist}
         </ul>
     </div>
@@ -110,15 +110,16 @@
         <h3>联系信息</h3>
         <div class="contactTxt">
             <ul>
-                <li><i class="icon-map-marker icon-large"></i>{$ContactInfoList.address|default='在【qy_contact表里的address字段】'}</li>
+                <li><i class="icon-map-marker icon-large"></i><a href="https://www.amap.com/search?query={$ContactInfoList.address}" target="_blank">{$ContactInfoList.address|default='在【qy_contact表里的address字段】'} - 【点击查看详细地图】</a></li>
                 <li><i class="icon-phone-sign"></i>{$ContactInfoList.telephone|default='在【qy_contact表里的telephone字段】'}</li>
                 <li><i class="icon-envelope"></i><a href="mailto:{$ContactInfoList.email|default='在【qy_contact表里的email字段】'}">{$ContactInfoList.email|default='在【qy_contact表里的email字段】'}</a></li>
             </ul>
         </div>
     </div>
-
-    <div class="contactForm"> <img src="__STATIC__/about/images/map.png" title="地图-东经:{$ContactInfoList.address_n|default='在【qy_contact表里的address_n字段】'}度，北纬:{$ContactInfoList.address_e|default='在【qy_contact表里的address_e字段】'}度"/> </div>
+    <div class="contactForm" style="width:620px;">
+        <iframe src="https://www.amap.com/search?query={$ContactInfoList.address}" width="620" height="400" frameborder="0" scrolling="no">
+        </iframe>
+        <!--<img src="__STATIC__/about/images/map.png" title="地图-东经:{$ContactInfoList.address_n|default='在【qy_contact表里的address_n字段】'}度，北纬:{$ContactInfoList.address_e|default='在【qy_contact表里的address_e字段】'}度"/>-->
+    </div>
     {/volist}
 </div>
-
-

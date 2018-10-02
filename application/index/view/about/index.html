@@ -37,7 +37,7 @@
       <h2>关于我们</h2>
       <div class="entry">
         {volist name="$aboutInfo" id="aboutInfoList"}
-          <p>{$aboutInfoList.describedefault='【默认描述】'}</p>
+          <p><?php echo $aboutInfoList['txt'] ?></p>
         {/volist}
       </div>
     </div>

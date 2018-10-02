@@ -1,0 +1,74 @@
+{include file="public/header" /}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">产品管理</a>
+        <a>
+          <cite>产品分类</cite>
+        </a>
+      </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="{:url()}" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+
+<div class="x-body" >
+    <xblock>
+        <button class="layui-btn" onclick="x_admin_show('添加分类','{:url(\'admin/GoodsClassController/addView\')}',500,200)"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共{$classListCount}条 · 共{$classListCount/15|getInt}页</span>
+    </xblock>
+    <div class="container-wrap">
+        <div class="box-1">
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>操作</th>
+                        <th>分类</th>
+                        <th>含有项目数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="$classList" id="list"}
+                        <tr>
+                            <td width="5%">
+                                <a title="编辑"  onclick="x_admin_show('修改操作','{:url(\'admin/GoodsClassController/editView\',[\'id\'=>$list.GoodsClassId])}',500,200)" href="javascript:;">
+                                    <i style="color: green" class="layui-icon"></i>
+                                </a>
+                                <a title="删除" onclick="delete_(this,'{$list.GoodsClassId}')" href="javascript:;">
+                                    <i  style="color:red;" class="layui-icon"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{:url('index/Product/productClassifyShow',['GoodsClassId'=>$list.GoodsClassId])}#breadcrumb" target="_blank">{$list.ClassName}</a>
+                            </td>
+                            <td>{$list.GoodsClassId|getGoodsClassCount}</td>
+                        </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--------->
+    <div class="page">
+        {$classList|raw}
+    </div>
+</div>
+
+<script>
+    /*删除*/
+    function delete_(obj,id){
+        layer.confirm('确认要删除吗？',function(index){
+            var url = "{:url('admin/GoodsClassController/delete')}";
+            var postData ={"id":id};
+            $.post(url,postData,function (result) {
+                if(result === 1 ){
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!',{icon:1,time:500});
+                }else {
+                    layer.msg('删除失败!',{icon:5,time:500});
+                }
+            },"json");
+        });
+    }
+</script>
+</html>
