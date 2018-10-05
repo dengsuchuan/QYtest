@@ -28,6 +28,12 @@ class Cases extends Base
         $frontId = $id-1;
         $afterId = $id+1;
 
+        //访问量增加
+        //读取数据库访问量
+        $lookCount = CaseInfo::Where('caseId',$id)->value('lookglance');
+        $lookCount += 1;
+        CaseInfo::where('caseId',$id)->update(['lookglance'=>$lookCount]);
+
         $casesArrayFront = CaseInfo::where('caseId',$frontId)->select();
         $casesArray = CaseInfo::where('caseId',$id)->select();
         $casesArrayAfter = CaseInfo::where('caseId',$afterId)->select();

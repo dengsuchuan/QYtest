@@ -33,6 +33,12 @@ class news extends Base
         $frontId = $id-1;
         $afterId = $id+1;
 
+        //访问量增加
+        //读取数据库访问量
+        $lookCount = NewsInfo::Where('newsId',$id)->value('lookglance');
+        $lookCount += 1;
+        NewsInfo::where('newsId',$id)->update(['lookglance'=>$lookCount]);
+
         $newsArrayFront = NewsInfo::where('newsId',$frontId)->select();
         $newsArray = NewsInfo::where('newsId',$id)->select();
         $newsArrayAfter = NewsInfo::where('newsId',$afterId)->select();

@@ -28,6 +28,12 @@ class Product extends Base
         $frontId = $id-1;
         $afterId = $id+1;
 
+        //访问量增加
+        //读取数据库访问量
+        $lookCount = GoodsInfo::Where('newsId',$id)->value('lookglance');
+        $lookCount += 1;
+        GoodsInfo::where('newsId',$id)->update(['lookglance'=>$lookCount]);
+
         $newsArrayFront = GoodsInfo::where('newsId',$frontId)->select();
         $newsArray = GoodsInfo::where('newsId',$id)->select();
         $newsArrayAfter = GoodsInfo::where('newsId',$afterId)->select();

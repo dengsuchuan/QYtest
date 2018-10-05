@@ -15,6 +15,7 @@ use app\admin\model\CaseInfo;
 use app\admin\model\GoodsInfo;
 use app\admin\model\Message;
 use app\admin\model\NewsInfo;
+use think\Db;
 
 class Index extends Base
 {
@@ -26,6 +27,22 @@ class Index extends Base
     }
 
     public function welcomeShow(){
+        $sum = 0;
+        $goodsLookCount = Db::query("select lookglance from qy_goodsinfo;");
+        foreach ($goodsLookCount as $value){
+            $sum = $sum + $value['lookglance'];
+        }
+
+        $newsLookCount = Db::query("select lookglance from qy_newsinfo;");
+        foreach ($newsLookCount as $value){
+            $sum = $sum + $value['lookglance'];
+        }
+
+        $caseLookCount = Db::query("select lookglance from qy_caseinfo;");
+        foreach ($caseLookCount as $value){
+            $sum = $sum + $value['lookglance'];
+        }
+
         $info = array(
             'os'=>PHP_OS,
             'environment'=>$_SERVER["SERVER_SOFTWARE"],
@@ -40,7 +57,8 @@ class Index extends Base
             'newsCount' => count(NewsInfo::all()),
             'casesCount' => count(CaseInfo::all()),
             'messageCount' => count(Message::all()),
-            'adminCount' =>count(AdminModel::all())
+            'adminCount' =>count(AdminModel::all()),
+            'lookglance'=>$sum
         );
         $this->view->assign('info',$info);
         return $this->view->fetch('welcome');
